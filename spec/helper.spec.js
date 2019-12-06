@@ -1,8 +1,7 @@
 var helper = require('../helper/helperDna');
 
 describe("check mutant ", function() {
-    var _numberA;
-    var _numberB;
+
 
     it("should be true", function() {
 

@@ -1,8 +1,6 @@
 var da = require('../helper/da.js');
 
 describe("save data of results ", function() {
-    var _numberA;
-    var _numberB;
 
     it("should be true,", function () {
 
