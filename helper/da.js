@@ -3,6 +3,15 @@ var url = "mongodb://localhost:27017/";
 var stats = null;
 
 module.exports = {
+
+
+    /**
+     * Se conecta a la base e incrementar la cantidad de mutantes o humanos en funcion de la variable Type
+     *
+     * @param {string} type
+     * @return {bool} true|false
+     *
+     */
     incType: function (type) {
         var count_mutant_dna_aux = 0;
         var count_human_dna_aux = 0;
@@ -41,6 +50,13 @@ module.exports = {
         return true;
 
     },
+    /**
+     * Se conecta, recupero los datos de la funcion de arriba y ademas devuelvo el json listo para que devuelva el servicio /stats
+     *
+     *
+     * @return {object}
+     *
+     */
     getStats: function () {
 
 

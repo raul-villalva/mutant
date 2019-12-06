@@ -1,9 +1,24 @@
 
 module.exports = {
+
+    /**
+     * Esta funcion recibe el parametro dna del router y analiza el json si, para ver si la cadena es mutante o no.
+     *
+     * @param {array} dna
+     * @return {bool} true o false
+     *
+     */
     isMutant: function  (dna){
         let counter = checkDiagonally(dna) +  checkVertical(dna) + checkHorizontal(dna) ;
         return (counter > 1);
     },
+    /**
+     * Esta funcion recibe el parametro dns del router y analiza el array contiene cadenas validas con los caracteres "A","T","C","G".
+     *
+     * @param {array} dna
+     * @return {bool} true|false
+     *
+     */
     isValid: function   (dna){
 
             let valid_char = ["A","T","C","G"];
@@ -23,6 +38,14 @@ module.exports = {
 
 
 
+/**
+ * Esta funcion recibe el parametro dns
+ * y devuelve cuantas veces aparece un determinado caracter de forma continua al menos 4 veces
+ *
+ * @param {array} dna
+ * @return {int}
+ *
+ */
  function checkVertical  (dna){
 
     let counter =0;
@@ -47,6 +70,15 @@ module.exports = {
     }
     return counter;
 }
+
+/**
+ * Esta funcion recibe el parametro dns
+ * y devuelve cuantas veces aparece un determinado caracter de forma continua al menos 4 veces
+ *
+ * @param {array} dna
+ * @return {int}
+ *
+ */
  function checkDiagonally  (dna){
 
     let counter = 0;
@@ -73,6 +105,14 @@ module.exports = {
     return counter;
 }
 
+/**
+ * Esta funcion recibe el parametro dns
+ * y devuelve cuantas veces aparece un determinado caracter de forma continua al menos 4 veces
+ *
+ * @param {array} dna
+ * @return {int}
+ *
+ */
 function checkHorizontal  (dna){
 
     let counter = 0;

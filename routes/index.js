@@ -8,7 +8,7 @@ router.post('/mutant', function(req, res, next) {
 
     //Si no es valido tiro 403
     if (helperDna.isValid(req.body) ) {
-        res.sendStatus((403);
+        res.sendStatus(403);
     } else if (helperDna.isMutant(req.body)) {
         da.incType("mutant");
       res.sendStatus(200);
