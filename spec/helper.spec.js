@@ -14,8 +14,23 @@ describe("check mutant ", function() {
 
     it("should return false", function() {
 
-        var dna = ["ATGATG","CAGTGC","TTATGT","ASDAGG","CSDCTA","TCACTG"]
+        var dna = ["ATGATG","CAGTGC","TTATGT","ASGAGG","CAGCTA","TCACTG"]
         var result = helper.isMutant(dna);
+
+        expect(result).toEqual(false);
+    });
+
+    it("should return false", function() {
+
+        var dna = ["ATGEEEE","CAGTGC","TTATGT","ASDAGG","CSDCTA","TCACTG"]
+        var result = helper.isValid(dna);
+
+        expect(result).toEqual(false);
+    });
+    it("should return true", function() {
+
+        var dna = ["ATGATG","CAGTGC","TTATGT","ASGAGG","CAGCTA","TCACTG"]
+        var result = helper.isValid(dna);
 
         expect(result).toEqual(false);
     });

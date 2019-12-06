@@ -5,7 +5,11 @@ var router = express.Router();
 
 
 router.post('/mutant', function(req, res, next) {
-    if (helper.isMutant(req.body)) {
+
+    //Si no es valido tiro 403
+    if (helperDna.isValid(req.body) ) {
+        res.send(403);
+    } else if (helperDna.isMutant(req.body)) {
         da.incType("mutant");
       res.send(200);
     } else {

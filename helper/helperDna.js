@@ -3,6 +3,21 @@ module.exports = {
     isMutant: function  (dna){
         let counter = checkDiagonally(dna) +  checkVertical(dna) + checkHorizontal(dna) ;
         return (counter > 1);
+    },
+    isValid: function   (dna){
+
+            let valid_char = ["A","T","C","G"];
+            for (i=0;i<dna.length;i++) {
+
+                let last = '';
+                let coin = 0;
+                for (j=0;j<dna[i].length;j++) {
+                    if (!valid_char.includes(dna[i].charAt(j))) {
+                        return false;
+                    }
+                }
+            }
+        return true;
     }
 }
 
@@ -81,5 +96,21 @@ function checkHorizontal  (dna){
         }
     }
     return counter;
+};
+
+function isValid  (dna){
+
+    let valid_char = ["A","T","C","G"];
+    for (i=0;i<dna.length;i++) {
+
+        let last = '';
+        let coin = 0;
+        for (j=0;j<dna[i].length;j++) {
+            if (!valid_char.includes(dna[i].charAt(j))) {
+                return false;
+            }
+        }
+    }
+    return true;
 };
 
